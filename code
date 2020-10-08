@@ -882,6 +882,7 @@ figcaption p {
     text-align: center;
     text-transform: lowercase;
     box-sizing: border-box;
+    position: relative;
 }
 
 #perma span {
@@ -897,6 +898,7 @@ figcaption p {
     text-align: center;
     text-transform: lowercase;
     box-sizing: border-box;
+    position: relative;
 }
  
 #permatg a {
@@ -911,9 +913,8 @@ figcaption p {
 
 .rb {
     position: absolute;
-    left: 50%;
-    transform: translate(205px, 0px);
-    margin-top: 25px;
+    left: 47%;
+    margin-top: 27px;
     display: inline-block;
     z-index: 1;
 }
@@ -2563,7 +2564,9 @@ $(document).ready(function(){
             flexibleFrames($(".capframe"));
         });
         flexibleFrames($(".video"));
-    } $(document).ready(flexFrame);
+    } 
+    
+    $(document).ready(flexFrame);
     // audio player fix by @ shudesigns
         var $audio = $('iframe.tumblr_audio_player');
         $audio.load(function() {
