@@ -1574,6 +1574,7 @@ iframe.tumblr_audio_player {
 
 .la-facebook-f:hover, .la-instagram:hover, .la-twitter:hover, .la-youtube:hover {
     color: {color:links};
+    background-color: transparent;
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
