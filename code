@@ -1053,12 +1053,67 @@ figcaption p {
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 102px;
+    background-color: {color:question background};
     box-sizing: border-box;
-    padding: 20px;
 }
  
-iframe.tumblr_audio_player {
-  height: 85px;
+.playbutton {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 5px;
+    z-index: 999999;
+}
+ 
+.playbox {
+    background-color: {color:question background};
+    width: 40px;
+    height: 102px;
+    z-index: 1;
+    position:absolute;
+    opacity: 0.6;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+}
+ 
+.audiowrapper:hover .playbox {
+    opacity: 0.9;
+    -webkit-transition: all 0.6s ease-in-out;
+    -moz-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+}  
+           
+.audioimgwrapper {
+    overflow: hidden;
+    width: 102px;
+    height: 102px;
+}
+           
+.audioimgwrapper img {
+    width: 100%;
+    height: auto;
+}
+           
+.trackdetails {
+    align-self: center;
+    padding: 10px 15px;
+}
+ 
+ 
+.track {
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    color: {color:question};
+    line-height: 30px;
+}
+ 
+.artist {
+    color: {color:question};
 }
  
 /*----------TUMBLR QUESTION/ANSWER----------*/
@@ -2301,7 +2356,21 @@ width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
  
 {block:Audio}
 <div class="audiowrapper">
-{AudioEmbed-640}
+<div class="audiocont">
+{block:AlbumArt}
+<div class="audioimgwrapper">
+<div class="playbox">
+<div class="playbutton">
+{block:AudioPlayer}{AudioPlayer}{/block:AudioPlayer}
+</div></div>
+<img src="{AlbumArtURL}">
+</div>
+{/block:AlbumArt}
+</div>
+<div class="trackdetails">
+<div class="track">{block:TrackName}{TrackName}{/block:TrackName}</div>
+<div class="artist">{block:Artist}- {Artist}{/block:Artist}</div>
+</div>
 </div>
 {block:IfShowCaptions}
 {block:Caption} <div class="caption"> {block:NotReblog} <figcaption> {Caption} </figcaption> {/block:NotReblog} {block:RebloggedFrom} <div class="reblog-list">
